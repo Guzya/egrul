@@ -71,11 +71,11 @@ if __name__ == "__main__":
     parser.add_argument("--source", type=str, required=True, help="Папка с файлами для обработки")   
     parser.add_argument("--dest", type=str,required=True, help="Папка с результатами работы")
     parser.add_argument("--console", choices=["yes", "no"],
-        default="yes", type=str, help="Вывод лога в консоль, по умолчанию \"no\"")
+        default="no", type=str, help="Вывод лога в консоль, по умолчанию \"no\"")
     
     args = parser.parse_args()
     
-    if args.console == 'no':
+    if args.console == 'yes':
         formatConsole = logging.Formatter('%(asctime)s: %(levelname)-6s: %(message)s')	
         console = logging.StreamHandler()
         console.setLevel(logging.INFO)
